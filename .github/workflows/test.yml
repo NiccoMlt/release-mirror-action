@@ -14,5 +14,5 @@ jobs:
       - name: Use this action
         uses: ./
         with:
-          input-repo: ${{ GITHUB_REPOSITORY }}
-          output-repo: ${{ GITHUB_REPOSITORY }}
+          input-repo: ${{ env.GITHUB_REPOSITORY }}
+          output-repo: ${{ env.GITHUB_REPOSITORY }}
