@@ -13,3 +13,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Use this action
         uses: ./
+        with:
+          input-repo: ${{ GITHUB_REPOSITORY }}
+          output-repo: ${{ GITHUB_REPOSITORY }}

@@ -8,7 +8,7 @@ inputs:
   input-repo:
     description: 'The repo to copy releases from. Defaults to this.'
     required: true
-    default: ${{ env.GITHUB_REPOSITORY }}
+    default: ${{ GITHUB_REPOSITORY }}
   output-repo:
     description: 'The repo to create releases on.'
     required: true
