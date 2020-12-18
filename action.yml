@@ -1,0 +1,25 @@
+name: 'Mirror GitHub release'
+author: 'Niccolò Maltoni'
+description: 'Copies all the assets from the release on a GitHub repo'
+branding:
+  icon: copy
+  color: red
+inputs:
+  input-repo:
+    description: 'The repo to copy releases from. Defaults to this.'
+    required: true
+    default: ${{ env.GITHUB_REPOSITORY }}
+  output-repo:
+    description: 'The repo to create releases on.'
+    required: true
+runs:
+  using: composite
+  steps:
+    - name: 'Install GitHub CLI'
+      shell: bash
+      run: |
+        sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+        sudo apt-add-repository https://cli.github.com/packages
+        sudo apt update
+        sudo apt install gh
+        gh --version
